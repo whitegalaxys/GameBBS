@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% from 'bootstrap/form.html' import render_form %}
 {% import "_macros.html" as macros %}
 
 {% block title %}BBS - 回帖{% endblock %}
@@ -17,7 +17,7 @@
 
 {% if current_user.can(Permission.COMMENT) %}
 <div class="comment-form">
-    {{ wtf.quick_form(form) }}
+    {{ render_form(form) }}
 </div>
 {% endif %}
 

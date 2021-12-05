@@ -2,7 +2,7 @@
 {% from 'bootstrap/form.html' import render_form %}
 {% import "_macros.html" as macros %}
 
-{% block title %}BBS - 首页{% endblock %}
+{% block title %}{% endblock %}
 
 {% block page_content %}
 <div class="post-tabs">
@@ -22,7 +22,9 @@
     {{ macros.pagination_widget(pagination, '.index') }}
 </div>
 {% endif %}
+
 {% endblock %}
+
 
 {% block scripts %}
 {{ super() }}

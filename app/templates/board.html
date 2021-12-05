@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% from 'bootstrap/form.html' import render_form %}
 
  {% block title %}BBS - {{ board.name }}{% endblock %}
  {% block page_content %}
@@ -66,7 +66,7 @@
 
 <div class="post-form">
     {% if current_user.can(Permission.WRITE) %}
-    {{ wtf.quick_form(form) }}
+    {{ render_form(form) }}
     {% endif %}
 </div>
 
