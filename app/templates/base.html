@@ -1,14 +1,17 @@
-{% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+
+{% from 'bootstrap/form.html' import render_form %}
 
 {% block head %}
-{{ super() }}
-
+{#{{ super() }}#}
 <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
 type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
 type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+{#<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">#}
+            {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
 {% endblock %}
 
 {% block title %}BBS{% endblock %}
@@ -30,7 +33,6 @@ type="image/x-icon">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('main.index') }}">首页</a></li>
                 <li><a href="{{ url_for('main.boards') }}">版块</a></li>
-                <li><a href="{{ url_for('main.compare') }}">比较</a></li>
                 <li><a href="{{ url_for('main.search_user') }}">搜索用户</a></li>
                 {% if current_user.is_authenticated %}}
                     <li><a href="{{ url_for('main.user', username=current_user.username)}}">个人</a> </li>
@@ -75,7 +77,11 @@ type="image/x-icon">
 
 {% endblock %}
 
+
+
 {% block scripts %}
-{{ super() }}
+                <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+{#{{ super() }}#}
 {{ moment.include_moment() }}
 {% endblock %}

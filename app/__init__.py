@@ -21,7 +21,8 @@ mail = Mail()
 
 pagedown = PageDown()
 moment = Moment()
-
+bootstrap = Bootstrap()
+avatars = Avatars()
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -39,9 +40,9 @@ def create_app(config_name):
     from .models import Role, Follow, User, Board, Post, Comment
 
     db.init_app(app)
-    avaters = Avatars(app)
+    avatars.init_app(app)
     mail.init_app(app)
-    bootstrap = Bootstrap(app)
+    bootstrap.init_app(app)
     pagedown.init_app(app)
     moment.init_app(app)
     login_manager.init_app(app)
