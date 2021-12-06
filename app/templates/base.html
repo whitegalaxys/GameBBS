@@ -15,17 +15,17 @@ type="image/x-icon">
             {{ bootstrap.load_css() }}
         {% endblock %}
           <!-- Site CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
-    <!-- ALL VERSION CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/versions.css') }}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}">
-
-
-    <!-- Modernizer for Portfolio -->
-    <script src="{{ url_for('static', filename = 'js/modernizer.js') }}"></script>
+{#    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">#}
+{#    <!-- ALL VERSION CSS -->#}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/versions.css') }}">#}
+{#    <!-- Responsive CSS -->#}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">#}
+{#    <!-- Custom CSS -->#}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}">#}
+{##}
+{##}
+{#    <!-- Modernizer for Portfolio -->#}
+{#    <script src="{{ url_for('static', filename = 'js/modernizer.js') }}"></script>#}
 
      <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -220,20 +220,22 @@ type="image/x-icon">
 
 {% block scripts %}
 
-            <!-- ALL JS FILES -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script src="{{ url_for('static', filename = 'js/all.js') }}"></script>
-    <!-- ALL PLUGINS -->
-    <script src="{{ url_for('static', filename = 'js/custom.js') }}"></script>
-	<script src="{{ url_for('static', filename = 'js/timeline.min.js') }}"></script>
-	<script>
-		timeline(document.querySelectorAll('.timeline'), {
-			forceVerticalMode: 700,
-			mode: 'horizontal',
-			verticalStartPosition: 'left',
-			visibleItems: 4
-		});
-	</script>
+{#            <!-- ALL JS FILES -->#}
+{#    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>#}
+{#    <script src="{{ url_for('static', filename = 'js/all.js') }}"></script>#}
+{#    <!-- ALL PLUGINS -->#}
+{#    <script src="{{ url_for('static', filename = 'js/custom.js') }}"></script>#}
+{#	<script src="{{ url_for('static', filename = 'js/timeline.min.js') }}"></script>#}
+{#	<script>#}
+{#		timeline(document.querySelectorAll('.timeline'), {#}
+{#			forceVerticalMode: 700,#}
+{#			mode: 'horizontal',#}
+{#			verticalStartPosition: 'left',#}
+{#			visibleItems: 4#}
+{#		});#}
+{#	</script>#}
+
+
 {#                <!-- Optional JavaScript -->#}
 {#            {{ bootstrap.load_js() }}#}
 
