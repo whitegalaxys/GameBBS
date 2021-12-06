@@ -1,49 +1,15 @@
+{% extends "layout.html" %}
 {% from 'bootstrap/form.html' import render_form %}
-<!doctype html>
-<html lang="en">
-    <head>
+
 
 
 {% block head %}
-{#{{ super() }}#}
-<link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
-type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}"
-type="image/x-icon">
-
-
-{#<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">#}
-
-            <!-- Bootstrap CSS -->
-            {{ bootstrap.load_css() }}
-
-          <!-- Site CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
-    <!-- ALL VERSION CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/versions.css') }}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}">
-
-
-    <!-- Modernizer for Portfolio -->
-    <script src="{{ url_for('static', filename = 'js/modernizer.js') }}"></script>
-
-     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+{{ super() }}
 {% endblock %}
 
 {% block title %}BBS{% endblock %}
-</head>
-    <body>
+{% block content %}
 {% block navbar %}
-
-
-
 	<!-- Modal -->
 	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -187,7 +153,7 @@ type="image/x-icon">
 {% endblock %}
 
 <!-- 用于弹出用flash构造的信息 -->
-{% block content %}
+
 <div class="container">
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">
@@ -198,7 +164,7 @@ type="image/x-icon">
    {% block page_content %}{% endblock %}
 </div>
 
-{% endblock %}
+
 {% block bottom %}
         <div class="copyrights">
         <div class="container">
@@ -220,32 +186,16 @@ type="image/x-icon">
         </div><!-- end container -->
     </div><!-- end copyrights -->
 {% endblock bottom %}
-
+{% endblock %}
 
 {% block scripts %}
 
-            <!-- ALL JS FILES -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script src="{{ url_for('static', filename = 'js/all.js') }}"></script>
-    <!-- ALL PLUGINS -->
-    <script src="{{ url_for('static', filename = 'js/custom.js') }}"></script>
-	<script src="{{ url_for('static', filename = 'js/timeline.min.js') }}"></script>
-	<script>
-		timeline(document.querySelectorAll('.timeline'), {
-			forceVerticalMode: 700,
-			mode: 'horizontal',
-			verticalStartPosition: 'left',
-			visibleItems: 4
-		});
-	</script>
+
 
 
 {#                <!-- Optional JavaScript -->#}
 {#            {{ bootstrap.load_js() }}#}
 
-{#{{ super() }}#}
+{{ super() }}
 {{ moment.include_moment() }}
 {% endblock %}
-
-</body>
-</html>
